@@ -27,3 +27,13 @@ C:\Users\CHEFS\Downloads\Frogger_V2\Frogger\Frogger\obj\Debug\Frogger.Properties
 C:\Users\CHEFS\Downloads\Frogger_V2\Frogger\Frogger\obj\Debug\Frogger.csproj.GenerateResource.cache
 C:\Users\CHEFS\Downloads\Frogger_V2\Frogger\Frogger\obj\Debug\Frogger.exe
 C:\Users\CHEFS\Downloads\Frogger_V2\Frogger\Frogger\obj\Debug\Frogger.pdb
+D:\Visual Studio\Frogger\Frogger\bin\Debug\Frogger.exe.config
+D:\Visual Studio\Frogger\Frogger\bin\Debug\Frogger.exe
+D:\Visual Studio\Frogger\Frogger\bin\Debug\Frogger.pdb
+D:\Visual Studio\Frogger\Frogger\obj\Debug\Frogger.csproj.AssemblyReference.cache
+D:\Visual Studio\Frogger\Frogger\obj\Debug\Frogger.FrmFrogger.resources
+D:\Visual Studio\Frogger\Frogger\obj\Debug\Frogger.Properties.Resources.resources
+D:\Visual Studio\Frogger\Frogger\obj\Debug\Frogger.csproj.GenerateResource.cache
+D:\Visual Studio\Frogger\Frogger\obj\Debug\Frogger.csproj.CoreCompileInputs.cache
+D:\Visual Studio\Frogger\Frogger\obj\Debug\Frogger.exe
+D:\Visual Studio\Frogger\Frogger\obj\Debug\Frogger.pdb

@@ -60,9 +60,14 @@ namespace Frogger
             SolidBrush brSpieler = new SolidBrush(Color.Green);
             Pen pnRand = new Pen(Color.Black, 1);
 
-            e.Graphics.FillRectangles(brBahnHell, alleBahnen);
-
-            // TODO: Bahnen sollen sich in der Farbe abwechseln (brBahnHell, brBahnDunkel)
+            for (int i = 0; i < alleBahnen.Length; i+=2)
+            {
+                e.Graphics.FillRectangle(brBahnHell, alleBahnen[i]);
+            }
+            for (int i = 1; i < alleBahnen.Length; i+=2)
+            {
+                e.Graphics.FillRectangle(brBahnDunkel, alleBahnen[i]);
+            }
 
             e.Graphics.FillRectangle(brZiel, alleBahnen[0]);
             e.Graphics.FillRectangle(brStart, alleBahnen[alleBahnen.Length-1]);
