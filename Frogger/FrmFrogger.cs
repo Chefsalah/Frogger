@@ -115,8 +115,15 @@ namespace Frogger
 
                 }
             }
-
-            // TODO Kontrollieren, ob Spieler überfahren wurde.
+            //TODO Spieler Kolllision
+            foreach (Hindernis hindernis in alleHindernisse)
+            {
+                //Spieler auf gleicher höhe des hindernisses
+                if (spieler.Y - 6 == hindernis.Y)
+                {
+                    
+                }
+            }
 
             this.Refresh();
         }
