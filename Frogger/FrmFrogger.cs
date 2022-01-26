@@ -121,7 +121,10 @@ namespace Frogger
                 //Spieler auf gleicher höhe des hindernisses
                 if (spieler.Y - 6 == hindernis.Y)
                 {
-                    
+                    if (spieler.X < hindernis.X && spieler.X + spieler.Width > hindernis.X)
+                    {
+                        spieler.Y = ClientSize.Height - 35;
+                    }
                 }
             }
 
