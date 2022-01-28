@@ -60,13 +60,16 @@ namespace Frogger
             SolidBrush brSpieler = new SolidBrush(Color.Green);
             Pen pnRand = new Pen(Color.Black, 1);
 
-            for (int i = 0; i < alleBahnen.Length; i += 2)
+            for (int i = 0; i < alleBahnen.Length; i++)
             {
-                e.Graphics.FillRectangle(brBahnHell, alleBahnen[i]);
-            }
-            for (int i = 1; i < alleBahnen.Length; i += 2)
-            {
-                e.Graphics.FillRectangle(brBahnDunkel, alleBahnen[i]);
+                if (i % 2 == 0)
+                {
+                    e.Graphics.FillRectangle(brBahnHell, alleBahnen[i]);
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(brBahnDunkel, alleBahnen[i]);
+                }
             }
 
             e.Graphics.FillRectangle(brZiel, alleBahnen[0]);
