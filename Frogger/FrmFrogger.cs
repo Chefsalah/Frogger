@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using Frogger;
+using Frogger.Properties;
 
 namespace Frogger
 {
@@ -76,8 +78,7 @@ namespace Frogger
 
             foreach (Hindernis aktuellesHindernis in alleHindernisse)
             {
-                e.Graphics.FillRectangle(
-                    aktuellesHindernis.Brush,
+                e.Graphics.DrawImage(Resources.Auto,
                     aktuellesHindernis.X,
                     aktuellesHindernis.Y,
                     aktuellesHindernis.Width,
@@ -118,7 +119,7 @@ namespace Frogger
                 //Spieler auf gleicher höhe des hindernisses. -6 wegen der differenz der höhe
                 if (spieler.IntersectsWith(hindernis.recHindernis))
                 {
-                     spieler.Y = alleBahnen[alleBahnen.Length -1].Y; 
+                    spieler.Y = alleBahnen[alleBahnen.Length - 1].Y;
                 }
             }
 
