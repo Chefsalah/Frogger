@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 
 namespace Frogger
@@ -40,7 +36,8 @@ namespace Frogger
             this.Height = Height;
             this.Speed = Speed;
             this.Color = Color;
-            this.Brush = new SolidBrush(Color);
+            Random rnd = new Random();
+            this.Brush = new SolidBrush(Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256)));
         }
 
         public void Move()

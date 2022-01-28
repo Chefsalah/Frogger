@@ -32,7 +32,7 @@ namespace Frogger
 
         private void FrmFrogger_Paint(object sender, PaintEventArgs e)
         {
-            if(tmrGameTick.Enabled == false)
+            if (tmrGameTick.Enabled == false)
             {
                 breite = this.ClientSize.Width;
                 hoehe = this.ClientSize.Height;
@@ -60,21 +60,21 @@ namespace Frogger
             SolidBrush brSpieler = new SolidBrush(Color.Green);
             Pen pnRand = new Pen(Color.Black, 1);
 
-            for (int i = 0; i < alleBahnen.Length; i+=2)
+            for (int i = 0; i < alleBahnen.Length; i += 2)
             {
                 e.Graphics.FillRectangle(brBahnHell, alleBahnen[i]);
             }
-            for (int i = 1; i < alleBahnen.Length; i+=2)
+            for (int i = 1; i < alleBahnen.Length; i += 2)
             {
                 e.Graphics.FillRectangle(brBahnDunkel, alleBahnen[i]);
             }
 
             e.Graphics.FillRectangle(brZiel, alleBahnen[0]);
-            e.Graphics.FillRectangle(brStart, alleBahnen[alleBahnen.Length-1]);
-            
+            e.Graphics.FillRectangle(brStart, alleBahnen[alleBahnen.Length - 1]);
+
             e.Graphics.DrawRectangles(pnRand, alleBahnen);
 
-            foreach(Hindernis aktuellesHindernis in alleHindernisse)
+            foreach (Hindernis aktuellesHindernis in alleHindernisse)
             {
                 e.Graphics.FillRectangle(
                     aktuellesHindernis.Brush,
@@ -90,11 +90,11 @@ namespace Frogger
         private void tmrGameTick_Tick(object sender, EventArgs e)
         {
             spawnZaehler++;
-            if(spawnZaehler == spawnRate)
+            if (spawnZaehler == spawnRate)
             {
                 spawnZaehler = 0;
 
-                int zufall = rndBahn.Next(1, anzahlBereiche-1);
+                int zufall = rndBahn.Next(1, anzahlBereiche - 1);
                 int yWertDerBahn = alleBahnen[zufall].Top;
 
                 alleHindernisse.Add(new Hindernis(breite, yWertDerBahn, 60, hoeheJeBereich, 10, Color.Red));
@@ -105,33 +105,24 @@ namespace Frogger
                 aktuellesHindernis.Move();
             }
 
-            for(int i = alleHindernisse.Count -1; i >= 0; i--)
-            { 
+            for (int i = alleHindernisse.Count - 1; i >= 0; i--)
+            {
                 if ((alleHindernisse[i].X + alleHindernisse[i].Width) < 0)
                 {
                     alleHindernisse.RemoveAt(i);
 
                 }
             }
-            //TODO Spieler Kolllision
             foreach (Hindernis hindernis in alleHindernisse)
             {
                 //Spieler auf gleicher höhe des hindernisses. -6 wegen der differenz der höhe
-                if (spieler.Y - 6 == hindernis.Y)
+                if (spieler.IntersectsWith(hindernis.recHindernis))
                 {
-                    if (spieler.IntersectsWith(hindernis.recHindernis))
-                    {
-                        resetPlayerPosition();
-                    }
+                    spieler.Y = ClientSize.Height - 35;
                 }
             }
 
             this.Refresh();
-        }
-
-        public void resetPlayerPosition()
-        {
-            spieler.Y = ClientSize.Height - 35;
         }
 
         private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)
@@ -145,7 +136,7 @@ namespace Frogger
                 spieler.Y = spieler.Y - hoeheJeBereich;
             }
 
-            if(e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.Down)
             {
                 spieler.Y = spieler.Y + hoeheJeBereich;
             }
