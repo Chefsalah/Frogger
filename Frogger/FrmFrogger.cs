@@ -97,7 +97,7 @@ namespace Frogger
                 int zufall = rndBahn.Next(1, anzahlBereiche - 1);
                 int yWertDerBahn = alleBahnen[zufall].Top;
 
-                alleHindernisse.Add(new Hindernis(breite, yWertDerBahn, 60, hoeheJeBereich, 10, Color.Red));
+                alleHindernisse.Add(new Hindernis(breite, yWertDerBahn, 60, hoeheJeBereich, 10));
             }
 
             foreach (Hindernis aktuellesHindernis in alleHindernisse)

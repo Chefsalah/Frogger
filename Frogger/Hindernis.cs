@@ -28,16 +28,22 @@ namespace Frogger
         }
 
 
-        public Hindernis(int X, int Y, int Width, int Height, int Speed, Color Color)
+        public Hindernis(int X, int Y, int Width, int Height, int Speed, Color Color):this(X,Y,Width,Height,Speed)
+        {
+            this.Color = Color;
+            Brush = new SolidBrush(Color);
+        }
+        public Hindernis(int X, int Y, int Width, int Height, int Speed)
         {
             this.X = X;
             this.Y = Y;
             this.Width = Width;
             this.Height = Height;
             this.Speed = Speed;
-            this.Color = Color;
             Random rnd = new Random();
-            this.Brush = new SolidBrush(Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256)));
+            Color randomColor = Color.FromArgb(rnd.Next(256), rnd.Next(256), rnd.Next(256));
+            Color = randomColor;
+            Brush = new SolidBrush(randomColor);
         }
 
         public void Move()
