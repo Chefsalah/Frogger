@@ -85,8 +85,6 @@ namespace Frogger
             }
 
             e.Graphics.FillEllipse(brSpieler, spieler);
-
-
         }
 
         private void tmrGameTick_Tick(object sender, EventArgs e)
@@ -118,17 +116,22 @@ namespace Frogger
             //TODO Spieler Kolllision
             foreach (Hindernis hindernis in alleHindernisse)
             {
-                //Spieler auf gleicher höhe des hindernisses
+                //Spieler auf gleicher höhe des hindernisses. -6 wegen der differenz der höhe
                 if (spieler.Y - 6 == hindernis.Y)
                 {
-                    if (spieler.X < hindernis.X && spieler.X + spieler.Width > hindernis.X)
+                    if (spieler.IntersectsWith(hindernis.recHindernis))
                     {
-                        spieler.Y = ClientSize.Height - 35;
+                        resetPlayerPosition();
                     }
                 }
             }
 
             this.Refresh();
+        }
+
+        public void resetPlayerPosition()
+        {
+            spieler.Y = ClientSize.Height - 35;
         }
 
         private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)

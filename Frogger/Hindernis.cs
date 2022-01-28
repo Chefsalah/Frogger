@@ -26,6 +26,10 @@ namespace Frogger
         // Damit man Zeichenmittel nutzen kann, muss System.Drawing importiert werden (oben bei using...)
         public Color Color;
         public SolidBrush Brush;
+        public Rectangle recHindernis
+        {
+            get { return new Rectangle(X, Y, Width, Height); }
+        }
 
 
         public Hindernis(int X, int Y, int Width, int Height, int Speed, Color Color)
