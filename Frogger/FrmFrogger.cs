@@ -118,7 +118,6 @@ namespace Frogger
             }
             foreach (Hindernis hindernis in alleHindernisse)
             {
-                //Spieler auf gleicher höhe des hindernisses. -6 wegen der differenz der höhe
                 if (spieler.IntersectsWith(hindernis.recHindernis))
                 {
                      spieler.Y = alleBahnen[alleBahnen.Length -1].Y; 
