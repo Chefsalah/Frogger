@@ -118,7 +118,7 @@ namespace Frogger
                 //Spieler auf gleicher höhe des hindernisses. -6 wegen der differenz der höhe
                 if (spieler.IntersectsWith(hindernis.recHindernis))
                 {
-                    spieler.Y = ClientSize.Height - 35;
+                     spieler.Y = alleBahnen[alleBahnen.Length -1].Y; 
                 }
             }
 
