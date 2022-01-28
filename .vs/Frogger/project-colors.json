@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f4cd1e21-2ef0-4f2f-b07f-62896ad83a52": {
+      "ProjectGuid": "f4cd1e21-2ef0-4f2f-b07f-62896ad83a52",
+      "DisplayName": "Frogger",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
