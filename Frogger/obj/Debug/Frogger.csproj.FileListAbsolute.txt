@@ -47,3 +47,13 @@ E:\Visual Studio 2017_2019\Github\Chefsalah\Frogger\Frogger\obj\Debug\Frogger.pd
 E:\Visual Studio 2017_2019\Github\Chefsalah\Frogger\Frogger\bin\Debug\Frogger.exe.config
 E:\Visual Studio 2017_2019\Github\Chefsalah\Frogger\Frogger\bin\Debug\Frogger.exe
 E:\Visual Studio 2017_2019\Github\Chefsalah\Frogger\Frogger\bin\Debug\Frogger.pdb
+D:\Frogger\Frogger\bin\Debug\Frogger.exe.config
+D:\Frogger\Frogger\bin\Debug\Frogger.exe
+D:\Frogger\Frogger\bin\Debug\Frogger.pdb
+D:\Frogger\Frogger\obj\Debug\Frogger.csproj.AssemblyReference.cache
+D:\Frogger\Frogger\obj\Debug\Frogger.FrmFrogger.resources
+D:\Frogger\Frogger\obj\Debug\Frogger.Properties.Resources.resources
+D:\Frogger\Frogger\obj\Debug\Frogger.csproj.GenerateResource.cache
+D:\Frogger\Frogger\obj\Debug\Frogger.csproj.CoreCompileInputs.cache
+D:\Frogger\Frogger\obj\Debug\Frogger.exe
+D:\Frogger\Frogger\obj\Debug\Frogger.pdb

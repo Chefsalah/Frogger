@@ -129,18 +129,41 @@ namespace Frogger
 
         private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)
         {
-            // TODO Spieler darf nicht nach unten aus dem Spielfeld laufen
-            // TODO Weitere Bewegungen (links, rechts) einbauen
-            // TODO Wenn Spieler im Ziel ist, soll er wieder auf Start zurückgesetzt werden und das Spiel soll schwerer werden
-
             if (e.KeyCode == Keys.Up)
             {
                 spieler.Y = spieler.Y - hoeheJeBereich;
             }
 
-            if (e.KeyCode == Keys.Down)
+            else if (e.KeyCode == Keys.Down)
             {
                 spieler.Y = spieler.Y + hoeheJeBereich;
+            }
+
+            else if (e.KeyCode == Keys.Left)
+            {
+                spieler.X -= hoeheJeBereich;
+            }
+
+            else if (e.KeyCode == Keys.Right)
+            {
+                spieler.X += hoeheJeBereich;
+            }
+
+            if (spieler.X < 0)
+            {
+                spieler.X = 0;
+            }
+            else if (spieler.X + spieler.Width> ClientSize.Width)
+            {
+                spieler.X = ClientSize.Width - spieler.Width;
+            }
+            else if (spieler.Y < 0)
+            {
+                spieler.Y = 0;
+            }
+            else if (spieler.Y +spieler.Height > ClientSize.Height)
+            {
+                spieler.Y = ClientSize.Height - spieler.Height;
             }
 
             this.Refresh();
