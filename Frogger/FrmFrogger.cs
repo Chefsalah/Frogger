@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Frogger
@@ -58,6 +59,7 @@ namespace Frogger
             SolidBrush brBahnHell = new SolidBrush(Color.LightGray);
             SolidBrush brBahnDunkel = new SolidBrush(Color.Gray);
             SolidBrush brSpieler = new SolidBrush(Color.Green);
+            SolidBrush brBlack = new SolidBrush(Color.Black);
             Pen pnRand = new Pen(Color.Black, 1);
 
             for (int i = 0; i < alleBahnen.Length; i++)
@@ -88,12 +90,14 @@ namespace Frogger
             }
 
             e.Graphics.FillEllipse(brSpieler, spieler);
+
+            e.Graphics.DrawString("Level: " + aktuellesLevel, new Font("Arial", 16), brBlack, 0, 0);
         }
 
         private void tmrGameTick_Tick(object sender, EventArgs e)
         {
             spawnZaehler++;
-            if (spawnZaehler == spawnRate)
+            if (spawnZaehler > spawnRate)
             {
                 spawnZaehler = 0;
 
@@ -120,11 +124,18 @@ namespace Frogger
             {
                 if (spieler.IntersectsWith(hindernis.recHindernis))
                 {
-                     spieler.Y = alleBahnen[alleBahnen.Length -1].Y; 
+                    ResetLevel();
                 }
             }
 
             this.Refresh();
+        }
+
+        private void ResetLevel()
+        {
+            ResetPlayerPosition();
+            alleHindernisse = new List<Hindernis>();
+            aktuellesLevel = 1;
         }
 
         private void FrmFrogger_KeyDown(object sender, KeyEventArgs e)
@@ -166,7 +177,29 @@ namespace Frogger
                 spieler.Y = ClientSize.Height - spieler.Height;
             }
 
+
+            if (spieler.IntersectsWith(alleBahnen[0]))
+            {
+                NextLevel();
+                ResetPlayerPosition();
+            }
+
             this.Refresh();
+        }
+
+        private void ResetPlayerPosition()
+        {
+            spieler.Y = alleBahnen[alleBahnen.Length - 1].Y;
+        }
+
+        int aktuellesLevel = 1;
+        private void NextLevel()
+        {
+            aktuellesLevel++;
+            if (spawnRate > 5)
+            {
+                spawnRate--;
+            }
         }
     }
 }
